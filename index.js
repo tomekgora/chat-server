@@ -1,9 +1,11 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
 const messageRouter = require('./message/router')
 
 const port = 4000
 
+app.use(bodyParser.json())
 app.use(messageRouter)
 
 app.get(
